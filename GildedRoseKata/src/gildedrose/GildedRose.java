@@ -6,6 +6,7 @@ public class GildedRose {
 
 	AumentarCalidad aumentar = new AumentarCalidad();
 	ReducirCalidad reducir = new ReducirCalidad();
+	ReducirSellin reducirsell = new ReducirSellin();
 	
 	Backstage backstage = new Backstage(null, 0, 0);
 	AgedBrie agedbrie = new AgedBrie(null, 0, 0);
@@ -16,87 +17,40 @@ public class GildedRose {
 public void updateQuality(List<Item> items) {		
 		for (Item item : items) {
 			
-//////////////////////////////--------------------------------------/////////////////////////////////
-			if (!item.getName().equals(agedbrie.getName()) && !item.getName().equals(backstage.getName())) {
-				 if(!item.getName().equals(sulfuras.getName())){
-				if (item.getQuality() > 0) {					
-					reducir.ReducirUnoCalidad(item);					
-					}
-				}
-				 
-				 ////////////////////INICIO NUEVO////////////////////////
-				//se reducio a conjured mana cake aqui para reducir en 2 su Calidad
-				if(item.getName().equals(conjured.getName())){
-					if (item.getQuality() > 0){
-						reducir.ReducirUnoCalidad(item);
-					}
- 				}
-				/////////////////////FIN NUEVO//////////////////////////
-				/* esto quedo fuera
-				   if (!item.getName().equals("Sulfuras, Hand of Ragnaros")) {
--						item.setQuality(item.getQuality() - 1);
--					}
-				 */
- 			} 
-//////////////////////////////--------------------------------------/////////////////////////////////
-			else {
- 				if (item.getQuality() < 50) {
- 					aumentar.AumentarUnoCalidad(item);
- 						if (item.getName().equals(backstage.getName())) {
- 							if (item.getSellIn() < 11){
- 								if(item.getQuality() < 50) {
- 									aumentar.AumentarUnoCalidad(item);				
- 							}
- 						}
- 							if (item.getSellIn() < 6){
- 								if(item.getQuality() < 50) {
- 									aumentar.AumentarUnoCalidad(item);
- 							}
-						}
- 					}
- 				}
- 			}
-//////////////////////////////--------------------------------------/////////////////////////////////
+			if (item.getName().equals(conjured.getName()) || item.getName().equals(normal.getName())) { 
+					 conjured.Evaluacion(item);
+			
+			if(item.getName().equals(conjured.getName())){
+					conjured.Evaluacion(item);
+				}				
+			} else {
+				if (item.getQuality() < 50) {  
+					aumentar.AumentarUnoCalidad(item);  
+					 	if (item.getName().equals(backstage.getName())) {  
+					 		backstage.Evaluacion(item);  					 				
+					  			}  
+					  		}  
+					  	}  
+
 			if (item.getName() != sulfuras.getName()) {
- 				item.setSellIn(item.getSellIn() - 1);
+ 				reducirsell.ReducirUnoSellin(item);
  			}
 			if (item.getSellIn() < 0) {
  				if (item.getName() != agedbrie.getName()) {
- 					if (item.getName() != backstage.getName()) {
- 						
- 						/*  //esto queda fuera
- 							   if (item.getQuality() > 0) {
-									if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-										operacion.ReducirUnoCalidad(item);
-							}
- 							   }
- 							*/ 
-										
- 						//////////////////////INICIO NUEVO///////////////////////
- 						//esto soluciona los dos ultimos test donde se ha reducio en 4 la calidad de 
- 						// conjured
-						 	
+ 					if (item.getName() != backstage.getName()) {			
 						 	 if(item.getQuality() > 0){
-						 	 
-								if(item.getQuality() != 80){
-									reducir.ReducirUnoCalidad(item);
-								}
-								if(item.getName().equals(conjured.getName())){
-									if(item.getQuality() > 0){
-											reducir.ReducirUnoCalidad(item);
-										}
+						 	 	 normal.Evaluacion(item);
+							
+						 	 if(item.getName().equals(conjured.getName())){
+							     conjured.Evaluacion(item);
 									}
 								}
-							
-						/////////////////////FIN NUEVO//////////////////////////
- 						
+
  						} else {
  						item.setQuality(item.getQuality() - item.getQuality());
  					}
  				} else {
- 					if (item.getQuality() < 50) {
- 						aumentar.AumentarUnoCalidad(item);
- 					}
+ 					agedbrie.Evaluacion(item);
  				}
 	}				
 		}		
