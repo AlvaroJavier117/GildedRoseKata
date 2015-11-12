@@ -216,3 +216,99 @@ La calidad es 80 y nunca se altera.
 
 Una vez que haya el proyecto clonado y la construcción en Eclipse ejecutar las pruebas.
 Usted tendrá algunas pruebas que fallan. Es su trabajo para conseguir que pasa.
+
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Command
+
+Se debe usar cuando:
+Se necesiten colas o registros de mensajes.
+Se deba tener la posibilidad de deshacer las operaciones realizadas.
+Se necesite uniformidad al invocar las acciones.
+Se quiera facilitar la parametrización de las acciones a realizar.
+Se quiera independizar el momento de petición del de ejecución.
+El parámetro de una orden puede ser otra orden a ejecutar.
+Se busque desarrollar sistemas utilizando órdenes de alto nivel que se construyen con operaciones sencillas (primitivas).
+Se necesite sencillez al extender el sistema con nuevas acciones.
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Strategy
+
+Este patrón debe utilizarse cuando:
+Un programa tiene que proporcionar múltiples variantes de un algoritmo o comportamiento.
+Es posible encapsular las variantes de comportamiento en clases separadas que proporcionan un modo consistente de acceder a los comportamientos.
+Permite cambiar o agregar algoritmos, independientemente de la clase que lo utiliza.
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Builder
+
+Se debe utilizar este patrón cuando sea necesario:
+Independizar el algoritmo de creación de un objeto complejo de las partes que constituyen el objeto y cómo se ensamblan entre ellas.
+Que el proceso de construcción permita distintas representaciones para el objeto construido, de manera dinámica.
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Singleton
+
+Usaremos este patrón cuando:
+ Debe haber exactamente una instancia de una clase y deba ser accesible a los clientes desde un punto de acceso conocido.
+ Se requiere de un acceso estandarizado y conocido públicamente.
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Factory method
+
+Este patrón debe ser utilizado cuando:
+Una clase no puede anticipar el tipo de objeto que debe crear y quiere que sus subclases especifiquen dichos objetos.
+Hay clases que delegan responsabilidades en una o varias subclases. Una aplicación es grande y compleja y posee muchos patrones creacionales. 
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Adapter
+
+Se debe utilizar cuando:
+Se quiera proporcionar una interfaz sencilla para un subsistema complejo.
+Se quiera desacoplar un subsistema de sus clientes y de otros subsistemas, haciéndolo más independiente y portable.
+Se quiera dividir los sistemas en niveles: las fachadas serían el punto de entrada a cada nivel. Facade puede ser utilizado a nivel aplicación.
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Facade
+
+Se debe utilizar cuando:
+Se quiera proporcionar una interfaz sencilla para un subsistema complejo.
+Se quiera desacoplar un subsistema de sus clientes y de otros subsistemas, haciéndolo más independiente y portable.
+Se quiera dividir los sistemas en niveles: las fachadas serían el punto de entrada a cada nivel. Facade puede ser utilizado a nivel aplicación.
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+Proxy
+
+Este patrón se debe utilizar cuando:
+Se necesite retrasar el coste de crear e inicializar un objeto hasta que es realmente necesario.
+Se necesita una referencia a un objeto más flexible o sofisticada que un puntero.
+Algunas situaciones comunes de aplicación son:
+Proxy remoto: representa un objeto en otro espacio de direcciones. Esto quiere decir que el proxy será utilizado de manera tal que la conexión con el objeto remoto se realice de forma controlada sin saturar el servidor.
+Proxy virtual: crea objetos costosos por encargo. Cuando se utiliza un software no siempre se cargan todas las opciones por default. Muchas veces se habilitan ciertos módulos sólo cuando el usuario decide utilizarlos.
+Proxy de protección: controla el acceso a un objeto. Controla derechos de acceso diferentes.
+Referencia inteligente: sustituto de un puntero que lleva a cabo operaciones adicionales cuando se accede a un objeto (ej. contar el número de referencias, cargar un objeto persistente en memoria, bloquear el objeto para impedir acceso concurrente, ...).
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
